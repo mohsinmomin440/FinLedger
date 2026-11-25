@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: finledger-api
+    runtime: node
+    plan: starter
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: USE_MEMORY_DB
+        value: "false"
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_ACCESS_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: JWT_ACCESS_TTL
+        value: 15m
+      - key: JWT_REFRESH_TTL
+        value: 7d
+      - key: CLIENT_URL
+        value: https://finledger-iota.vercel.app
+      - key: CORS_ORIGIN
+        value: https://finledger-iota.vercel.app
+      - key: SMTP_HOST
+        value: ""
+      - key: SMTP_PORT
+        value: 587
+      - key: SMTP_USER
+        value: ""
+      - key: SMTP_PASS
+        value: ""
+      - key: SMTP_FROM
+        value: FinLedger <noreply@finledger.app>
