@@ -2,7 +2,7 @@ services:
   - type: web
     name: finledger-api
     runtime: node
-    plan: starter
+    plan: free
     rootDir: server
     buildCommand: npm install
     startCommand: npm start
