@@ -1,0 +1,16 @@
+node_modules/
+client/dist/
+server/uploads/*
+!server/uploads/.gitkeep
+.env
+.env.local
+server/.env
+server/.env.local
+client/.env
+client/.env.local
+.vercel
+playwright-report/
+test-results/
+coverage/
+*.log
+.DS_Store
